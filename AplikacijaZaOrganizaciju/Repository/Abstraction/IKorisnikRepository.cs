@@ -6,5 +6,6 @@ namespace AplikacijaZaOrganizaciju.Repository.Abstraction
     public interface IKorisnikRepository
     {
         Task NapraviKorisnika(Korisnik korisnik);
+        Task<List<Korisnik>> DajSveKorisnike();
     }
 }

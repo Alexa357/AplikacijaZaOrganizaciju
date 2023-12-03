@@ -15,6 +15,12 @@ namespace AplikacijaZaOrganizaciju.Controllers
             _korisnikRepository = korisnikRepository;
         }
 
+        [HttpGet(Name = "DajSveKorisnike")]
+        public async Task<ActionResult<List<Korisnik>>> DajSveKorisnike(){
+            var korisnici = await _korisnikRepository.DajSveKorisnike();
+            return Ok(korisnici);
+        }
+
         [HttpPost(Name = "NapraviKorisnika")]
         public async Task<ActionResult<bool>> NapraviKorisnika([FromBody] Korisnik korisnik)
         {
